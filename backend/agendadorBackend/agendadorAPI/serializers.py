@@ -1,5 +1,6 @@
-from django.contrib.auth.models import User 
 from rest_framework import serializers 
+from django.contrib.auth.models import User 
+from .models import Event
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,3 +12,17 @@ class UserSerializer(serializers.ModelSerializer):
         print(validated_data)
         user = User.objects.create_user(**validated_data)
         return user
+
+class EventSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Event
+        fields = [
+            "id",
+            "client",
+            "professional",
+            "start",
+            "end",
+            "created_at",
+            "author"
+        ]
+        extra_kwargs = {"author": {"read_only": True}}
