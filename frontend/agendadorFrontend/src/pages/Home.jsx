@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import api from "../api";
+import Event from "../components/Event";
 
 function Home() {
     const [events, setEvents] = useState([]);
@@ -24,7 +25,7 @@ function Home() {
         .catch((err) => alert(err));
     };
 
-    const deleteEvents = (id) => {
+    const deleteEvent = (id) => {
         api
         .delete(`/api/events/delete/${id}/`)
         .then((res) => {
@@ -55,7 +56,10 @@ function Home() {
     return(
     <div>
         <div>
-            <h2>Eventos</h2>
+            <h2>Eventos: </h2>
+            {events.map((event) => (
+                <Event event={event} onDelete={deleteEvent} key={event.id} />
+            ))}
         </div>
         <h2>Criar um Evento</h2>
         <form onSubmit={createEvent}>
