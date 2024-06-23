@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import api from "../api";
 import Event from "../components/Event";
 
+import "../styles/Home.css"
+
 function Home() {
     const [events, setEvents] = useState([]);
 
