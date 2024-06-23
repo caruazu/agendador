@@ -4,12 +4,12 @@ from django.contrib.auth.models import User
 class Event(models.Model):
 
     PROFESSIONALS = [
-        ("A","João"),
-        ("B","Maria"),
+        ("João","João"),
+        ("Maria","Maria"),
     ]
 
     client = models.CharField(max_length=100)
-    professional = models.CharField(max_length=1, choices=PROFESSIONALS)
+    professional = models.CharField(max_length=100, choices=PROFESSIONALS)
     start = models.DateTimeField()
     end = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)

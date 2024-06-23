@@ -25,4 +25,4 @@ class EventSerializer(serializers.ModelSerializer):
             "created_at",
             "author"
         ]
-        extra_kwargs = {"author": {"read_only": True}}
+        
