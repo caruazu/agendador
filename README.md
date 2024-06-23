@@ -29,14 +29,51 @@ Esta aplicação foi construída com:
 
 Utilize o arquivo `.env.exemple` em `backend/agendadorBackend` como exemplo para suas variáveis locais da API. Além disso, use o arquivo `.env.exemple` em `frontend/agendadorFrontend` como exemplo para suas variáveis locais do frontend. 
 
-Faça sua cópia do arquivo e altere o nome deste para `.env`, ponha os dados de sua implementação. 
+Altere o nome destes arquivos para `.env`, ponha os dados de sua implementação.
+
+#### Banco de dados local
+
+Caso não tenha um ambiente com banco de dados, use o banco de dados `sqlite3`, modificando o arquivo `/backend/agendadorBackend/agendadorBackend/settings.py` e comentando o atual parâmetro `DATABASES` banco e descomentando que está comententado.
 
 ### Inicialização
 
-```bash
-source backend/env/bin/activate
-```
+
+#### Backend
 
 ```bash
 pip install -r backend/agendadorBackend/requirements.txt
 ```
+
+```bash
+python backend/agendadorBackend/manage.py makemigrations
+```
+
+```bash
+python backend/agendadorBackend/manage.py makemigrations agendadorAPI
+```
+
+```bash
+python backend/agendadorBackend/manage.py migrate
+```
+
+```bash
+python backend/agendadorBackend/manage.py runserver
+```
+
+#### Frontend
+
+```bash
+npm install frontend/agendadorFrontend/
+```
+
+```bash
+npm run build --prefix frontend/agendadorFrontend
+```
+
+```bash
+npm run preview --prefix frontend/agendadorFrontend
+```
+
+## Implementação
+
+Esse projeto foi disponibilizado via a núvem gratuita da [Render](https://render.com/). Seu demo está disponível [aqui](https://agendador-gskh.onrender.com/register).
