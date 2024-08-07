@@ -76,4 +76,6 @@ npm run preview --prefix frontend/agendadorFrontend
 
 ## Implementação
 
-Esse projeto foi disponibilizado via a núvem gratuita da [Render](https://render.com/). Seu demo está disponível [aqui](https://agendador-gskh.onrender.com/register).
+~~Esse projeto foi disponibilizado via a núvem gratuita da [Render](https://render.com/). Seu demo está disponível [aqui](https://agendador-gskh.onrender.com/register).~~
+
+desativei por enquanto por falta de tempo e recurso para manter o servidor
